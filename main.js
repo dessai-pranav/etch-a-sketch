@@ -27,9 +27,11 @@ function createBoard(size) {
 
         div.addEventListener("mouseover", function () {
             div.style.backgroundColor = "black";
-        });
 
+        });
         board.appendChild(div);
+
+
     }
 }
 
