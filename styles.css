@@ -292,7 +292,7 @@ button:active::after {
 }
 /* === Layout Fixes === */
 body {
-    background-color: grey;
+    background-color: gray;
     flex-direction: column;
     justify-content: flex-start; /* Instead of center for stacking top-down */
     gap: 2rem;

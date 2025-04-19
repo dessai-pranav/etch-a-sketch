@@ -1,13 +1,24 @@
 
 let input = prompt("Please enter a number between 1 and 100");
 let color ="black"
+let click = false;
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    getSize();
-
     const popupBtn = document.getElementById("popup");
     popupBtn.addEventListener("click", getSize);
+
+    document.querySelector("body").addEventListener("click", function (e) {
+        if (e.target.tagName !== "BUTTON") {
+            click = !click;
+            let draw = document.getElementById("draw");
+            if (draw) {
+                draw.innerHTML = click ? "Now you can draw" : "Now you can't draw";
+            }
+        }
+    });
+
+
+    createBoard(16);
 });
 
 function createBoard(size) {
@@ -50,13 +61,17 @@ function getSize() {
         createBoard(input);
         message.innerHTML = "You're ready to play!";
     }
+
 }
-function colorDiv(){
-if(color === 'random'){
-this.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
-}
-else{
-    this.style.backgroundColor = 'black'
+function colorDiv() {
+
+if(click) {
+    if (color === 'random') {
+        this.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
+    } else {
+        this.style.backgroundColor = 'black'
+    }
+
 }
 }
 function setColor(colorChoice){
