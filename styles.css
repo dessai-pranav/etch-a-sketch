@@ -297,7 +297,11 @@ body {
     justify-content: flex-start; /* Instead of center for stacking top-down */
     gap: 2rem;
     padding-top: 2rem;
-    overflow: hidden;
+
+
+        overflow-y: auto;
+        min-height: 100vh;
+
 }
 
 h1 {
@@ -323,16 +327,15 @@ h1 {
     margin-top: 0;
     color: black;
 }
-/* Container for etch-a-sketch grid */
-.container {
-    width: 600px;
-    height: 600px;
-    background-color: #fff;
-    display: grid;
-    grid-template-columns: repeat(16, 1fr); /* adjustable */
-    grid-template-rows: repeat(16, 1fr);
-    border: 2px solid #333;
-}
+
+    .container {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+
+
 
 /* Footer styling */
 .footer {
