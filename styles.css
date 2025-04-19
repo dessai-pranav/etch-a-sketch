@@ -299,16 +299,17 @@ body {
     padding-top: 2rem;
 
 
-        overflow-y: auto;
-        min-height: 100vh;
+    overflow-y: auto;
+    min-height: 100vh;
 
 }
 
 h1 {
     font-size: 2.5rem;
-    margin: 0;
+
     text-align: center;
     color: white;
+    margin-bottom: 0;
 }
 
 /* Header styling */
@@ -322,17 +323,22 @@ h1 {
 }
 .header h6{
     margin-bottom: 0;
+    margin-top: 0;
 }
 .header button{
     margin-top: 0;
     color: black;
 }
 
-    .container {
-        width: 500px;
-        height: 500px;
-        margin: 0 auto;
-    }
+.container {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+    border: 2px solid black;
+    background-color: white;
+    margin-top: 1rem;
+}
 
 
 
@@ -377,4 +383,20 @@ button span {
     font-weight: bold;
     margin-top: 1px;
     margin-bottom:1px
+}
+.overall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+
+}
+.footer button {
+    padding: 0.6rem 1.2rem;
+    color: navy;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+
 }

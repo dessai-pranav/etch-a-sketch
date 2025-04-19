@@ -1,3 +1,7 @@
+
+let input = prompt("Please enter a number between 1 and 100");
+let color ="black"
+
 document.addEventListener("DOMContentLoaded", function () {
 
     getSize();
@@ -10,7 +14,7 @@ function createBoard(size) {
     const board = document.querySelector(".container");
 
     board.innerHTML = "";
-    board.style.display = "grid";
+  board.style.display = "grid";
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
@@ -18,25 +22,23 @@ function createBoard(size) {
     for (let i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
 
-
         div.style.border = "1px solid #ccc";
         div.style.width = "100%";
         div.style.aspectRatio = "1";
         div.style.backgroundColor = "white";
 
 
-        div.addEventListener("mouseover", function () {
-            div.style.backgroundColor = "black";
+        div.addEventListener("mouseover", colorDiv)
 
-        });
-        board.appendChild(div);
+
+        board.appendChild(div)
 
 
     }
 }
 
 function getSize() {
-    let input = prompt("Please enter a number between 1 and 100");
+
     let message = document.querySelector("#message");
 
     if (input === "") {
@@ -48,4 +50,19 @@ function getSize() {
         createBoard(input);
         message.innerHTML = "You're ready to play!";
     }
+}
+function colorDiv(){
+if(color === 'random'){
+this.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
+}
+else{
+    this.style.backgroundColor = 'black'
+}
+}
+function setColor(colorChoice){
+     color = colorChoice;
+}
+function resetBoard(){
+    createBoard(input);
+
 }
