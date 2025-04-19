@@ -1,11 +1,11 @@
 
-let input = prompt("Please enter a number between 1 and 100");
+let input = prompt("Please enter a number between 1 and 30");
 let color ="black"
 let click = false;
 
 document.addEventListener("DOMContentLoaded", function () {
     const popupBtn = document.getElementById("popup");
-    popupBtn.addEventListener("click", getSize);
+    popupBtn.addEventListener("click", getSize)
 
     document.querySelector("body").addEventListener("click", function (e) {
         if (e.target.tagName !== "BUTTON") {
@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+createBoard(input);
 
-
-    createBoard(16);
 });
 
 function createBoard(size) {
@@ -33,10 +32,10 @@ function createBoard(size) {
     for (let i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
 
-        div.style.border = "1px solid #ccc";
+        div.style.border = "1px solid white";
         div.style.width = "100%";
         div.style.aspectRatio = "1";
-        div.style.backgroundColor = "white";
+        div.style.backgroundColor = "transparent";
 
 
         div.addEventListener("mouseover", colorDiv)
@@ -54,8 +53,8 @@ function getSize() {
 
     if (input === "") {
         getSize();
-    } else if (input < 1 || input > 100) {
-        alert("Please enter within the range of 1–100");
+    } else if (input < 1 || input > 30) {
+        alert("Please enter within the range of 1–30");
         getSize();
     } else {
         createBoard(input);
